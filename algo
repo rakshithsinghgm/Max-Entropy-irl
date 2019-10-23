@@ -1,4 +1,4 @@
-4Max Entropy Algorithm
+Max Entropy Algorithm
 
   1) Build inital reward weights (A 1D array of Size 24 or 25 with all 0s)
   2) While reward weights don't improve
