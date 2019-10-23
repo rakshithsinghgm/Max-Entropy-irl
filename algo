@@ -1,0 +1,46 @@
+4Max Entropy Algorithm
+
+  1) Build inital reward weights (A 1D array of Size 24 or 25 with all 0s)
+  2) While reward weights don't improve
+      Find Optimal Policy using Policy Iteration
+      Improve Reward Weights using Gradient Ascent
+  3)Return Rewards weights
+  Expected - weight ar 24 should be highest and lower for states not visited
+
+np.abs(prev_value - value)
+Reward
+    Reward = r_weights*State_features
+
+Policy Iteration()
+    v[s for s in S] = 0
+    for count < 100
+        for s in S
+            for s_prime in s+1
+                for all a
+                    Q(s/a) = Trans-mat[s][s_prime][a]*(reward+(gama*v[s_prime])
+                choose max from Q(s) =
+
+Policy Upadating
+    for s in S
+        for s_prime in S_prime
+            for a in a
+                argmax(Q(s,a) // this returns the index
+
+SVF
+ start distribution  = 1 for first state and 0 for everything else
+ for s in S
+    dt(0,s) = start_distribution[s]
+    for t in T
+        for a in A
+            for all s_prime in S
+                dt+1[s] = dt[s_prime]*policy[s_prime/a]*trans[s_prime,s,a]
+        dt[s,t+1] = dt
+
+Gradient Ascent
+    for s in S
+        gradeient = f_hat - dt[s]*feature_state[s]
+    reward_weights = reward_weights+alpha*Gradient
+
+
+f_hat  = mean frequency of each state in demos / total number demos
+
